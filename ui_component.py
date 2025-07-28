@@ -224,118 +224,152 @@ class VIPERS_UI(QMainWindow):
         self.setGeometry(100, 50, 1280, 800)
         self.setStyleSheet("""
             QMainWindow {
-                background-color: #1e272e;
+                background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #232526, stop:1 #414345);
                 color: #ecf0f1;
             }
             QLabel {
                 color: #ecf0f1;
+                font-family: 'Segoe UI', Arial, sans-serif;
             }
             QPushButton {
-                background-color: #2c3e50;
+                background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #232526, stop:1 #1abc9c);
                 color: white;
-                border: 1px solid #34495e;
-                border-radius: 5px;
-                padding: 5px 10px;
-                min-height: 30px;
+                border: 1.5px solid #16a085;
+                border-radius: 8px;
+                padding: 7px 24px;
+                min-height: 36px;
+                min-width: 120px;
+                font-size: 16px;
+                font-family: 'Segoe UI', Arial, sans-serif;
+                font-weight: 500;
+                transition: background 0.2s;
             }
             QPushButton:hover {
-                background-color: #3498db;
+                background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #1abc9c, stop:1 #3498db);
+                color: #fff;
             }
             QPushButton:pressed {
-                background-color: #2980b9;
+                background: #16a085;
             }
             QTabWidget::pane {
-                border: 1px solid #34495e;
-                background-color: #2c3e50;
-                border-radius: 5px;
+                border: 2px solid #16a085;
+                background: #232526;
+                border-radius: 10px;
+                margin-top: 8px;
             }
             QTabBar::tab {
-                background-color: #34495e;
-                color: white;
-                border-top-left-radius: 5px;
-                border-top-right-radius: 5px;
-                padding: 8px 15px;
-                margin-right: 2px;
+                background: #34495e;
+                color: #fff;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                padding: 12px 36px;
+                margin-right: 8px;
+                min-width: 160px;
+                font-size: 16px;
+                font-family: 'Segoe UI', Arial, sans-serif;
             }
             QTabBar::tab:selected {
-                background-color: #2c3e50;
-                border-bottom: 3px solid #1abc9c;
+                background: #1abc9c;
+                color: #232526;
+                border-bottom: 4px solid #16a085;
             }
             QTextEdit, QListWidget {
-                background-color: #2c3e50;
+                background: #232526;
                 color: #ecf0f1;
-                border: 1px solid #34495e;
-                border-radius: 5px;
+                border: 1.5px solid #16a085;
+                border-radius: 8px;
+                font-size: 14px;
+                font-family: 'Consolas', 'Segoe UI', Arial, sans-serif;
             }
             QGroupBox {
-                border: 1px solid #34495e;
-                border-radius: 5px;
-                margin-top: 10px;
+                border: 2px solid #16a085;
+                border-radius: 10px;
+                margin-top: 16px;
                 font-weight: bold;
-                color: #ecf0f1;
+                color: #1abc9c;
+                font-size: 16px;
+                font-family: 'Segoe UI', Arial, sans-serif;
             }
             QGroupBox::title {
                 subcontrol-origin: margin;
                 subcontrol-position: top center;
-                padding: 0 5px;
+                padding: 0 8px;
             }
             QComboBox {
-                background-color: #2c3e50;
-                color: white;
-                border: 1px solid #34495e;
-                border-radius: 3px;
-                padding: 5px;
+                background: #232526;
+                color: #fff;
+                border: 1.5px solid #16a085;
+                border-radius: 6px;
+                padding: 7px;
+                font-size: 14px;
+                font-family: 'Segoe UI', Arial, sans-serif;
             }
             QComboBox::drop-down {
                 border: 0px;
             }
             QComboBox QAbstractItemView {
-                background-color: #2c3e50;
-                color: white;
+                background: #232526;
+                color: #fff;
                 selection-background-color: #1abc9c;
             }
             QProgressBar {
-                border: 1px solid #34495e;
-                border-radius: 5px;
-                background-color: #2c3e50;
+                border: 1.5px solid #16a085;
+                border-radius: 8px;
+                background: #232526;
                 text-align: center;
-                color: white;
+                color: #fff;
+                font-size: 14px;
             }
             QProgressBar::chunk {
-                background-color: #1abc9c;
-                border-radius: 5px;
+                background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #1abc9c, stop:1 #3498db);
+                border-radius: 8px;
             }
             QCheckBox {
-                color: #ecf0f1;
+                color: #1abc9c;
+                font-size: 14px;
+                font-family: 'Segoe UI', Arial, sans-serif;
             }
             QCheckBox::indicator {
-                width: 15px;
-                height: 15px;
+                width: 18px;
+                height: 18px;
             }
             QRadioButton {
-                color: #ecf0f1;
+                color: #1abc9c;
+                font-size: 14px;
+                font-family: 'Segoe UI', Arial, sans-serif;
             }
             QStatusBar {
-                background-color: #2c3e50;
-                color: #ecf0f1;
+                background: #232526;
+                color: #1abc9c;
+                font-size: 14px;
+                border-top: 2px solid #16a085;
             }
             QToolBar {
-                background-color: #2c3e50;
+                background: #232526;
                 border: none;
+                spacing: 10px;
             }
             QMenuBar {
-                background-color: #2c3e50;
-                color: #ecf0f1;
+                background: #232526;
+                color: #1abc9c;
+                font-size: 15px;
+                font-family: 'Segoe UI', Arial, sans-serif;
             }
             QMenuBar::item:selected {
-                background-color: #1abc9c;
+                background: #1abc9c;
+                color: #232526;
             }
             QMenu {
-                background-color: #2c3e50;
-                color: #ecf0f1;
+                background: #232526;
+                color: #1abc9c;
+                font-size: 15px;
             }
             QMenu::item:selected {
-                background-color: #1abc9c;
+                background: #1abc9c;
+                color: #232526;
+            }
+            QScrollArea {
+                background: #232526;
             }
         """)
         
@@ -343,6 +377,8 @@ class VIPERS_UI(QMainWindow):
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
         main_layout = QVBoxLayout(central_widget)
+        main_layout.setContentsMargins(18, 18, 18, 18)
+        main_layout.setSpacing(18)
         
         # Create menu bar
         self.create_menu_bar()
@@ -360,18 +396,17 @@ class VIPERS_UI(QMainWindow):
         
         # Title with logo
         title_layout = QHBoxLayout()
+        title_layout.setSpacing(12)
         logo_label = QLabel()
         logo_pixmap = QPixmap("assests/logo.png")
         if not logo_pixmap.isNull():
-            logo_label.setPixmap(logo_pixmap.scaled(40, 40, Qt.KeepAspectRatio))
+            logo_label.setPixmap(logo_pixmap.scaled(48, 48, Qt.KeepAspectRatio, Qt.SmoothTransformation))
         else:
-            # Create a text-based logo if image not found
             logo_label.setText("🛡️")
-            logo_label.setFont(QFont("Arial", 24))
+            logo_label.setFont(QFont("Arial", 32, QFont.Bold))
         title_layout.addWidget(logo_label)
-        
         self.title_label = QLabel("VIPERS: Video and Image Processing Enhancement and Recognition System")
-        self.title_label.setStyleSheet("font-size: 20px; font-weight: bold; color: #1abc9c;")
+        self.title_label.setStyleSheet("font-size: 26px; font-weight: bold; color: #1abc9c; font-family: 'Segoe UI', Arial, sans-serif; letter-spacing: 1px;")
         title_layout.addWidget(self.title_label)
         title_layout.addStretch()
         header_layout.addLayout(title_layout, 7)
@@ -379,6 +414,7 @@ class VIPERS_UI(QMainWindow):
         # Mode selection
         mode_group = QGroupBox("Operation Mode")
         mode_layout = QHBoxLayout(mode_group)
+        mode_layout.setSpacing(16)
         self.mode_group = QButtonGroup(self)
         self.live_radio = QRadioButton("Live")
         self.playback_radio = QRadioButton("Playback")
@@ -396,13 +432,14 @@ class VIPERS_UI(QMainWindow):
         
         # Create main content splitter
         content_splitter = QSplitter(Qt.Horizontal)
-        content_splitter.setHandleWidth(2)
-        content_splitter.setStyleSheet("QSplitter::handle { background-color: #34495e; }")
+        content_splitter.setHandleWidth(3)
+        content_splitter.setStyleSheet("QSplitter::handle { background: #16a085; }")
         
         # Left panel - Video and controls
         left_panel = QWidget()
         left_layout = QVBoxLayout(left_panel)
-        left_layout.setContentsMargins(5, 5, 5, 5)
+        left_layout.setContentsMargins(10, 10, 10, 10)
+        left_layout.setSpacing(16)
         
         # Video display with tabs for different views
         video_tabs = QTabWidget()
@@ -428,9 +465,11 @@ class VIPERS_UI(QMainWindow):
         # Video controls
         controls_group = QGroupBox("Video Controls")
         controls_layout = QVBoxLayout(controls_group)
+        controls_layout.setSpacing(12)
         
         # Slider with time display
         slider_layout = QHBoxLayout()
+        slider_layout.setSpacing(10)
         self.time_label = QLabel("00:00:00")
         self.time_label.setMinimumWidth(80)
         slider_layout.addWidget(self.time_label)
@@ -447,6 +486,7 @@ class VIPERS_UI(QMainWindow):
         
         # Playback controls
         playback_layout = QHBoxLayout()
+        playback_layout.setSpacing(16)
         
         self.start_stop_button = QPushButton("Start Detection")
         playback_layout.addWidget(self.start_stop_button)
@@ -466,6 +506,7 @@ class VIPERS_UI(QMainWindow):
         
         # Detection settings
         settings_layout = QHBoxLayout()
+        settings_layout.setSpacing(16)
         
         self.detection_combo = QComboBox()
         self.detection_combo.addItems(["Face Detection", "Drone Detection", "Person Detection", "Vehicle Detection", "All Objects"])
@@ -483,6 +524,7 @@ class VIPERS_UI(QMainWindow):
         
         # Display options
         options_layout = QHBoxLayout()
+        options_layout.setSpacing(16)
         
         self.grid_checkbox = QCheckBox("Show Grid")
         self.grid_checkbox.setChecked(True)
@@ -503,14 +545,18 @@ class VIPERS_UI(QMainWindow):
         # Right panel with tabs for different functions
         right_panel = QTabWidget()
         self.right_panel = right_panel
+        right_panel.setStyleSheet("QTabWidget::tab-bar { left: 10px; }")
         
         # Detections tab
         detections_tab = QWidget()
         detections_layout = QVBoxLayout(detections_tab)
+        detections_layout.setContentsMargins(10, 10, 10, 10)
+        detections_layout.setSpacing(14)
         
         # Calendar for date selection
         calendar_group = QGroupBox("Detection Calendar")
         calendar_layout = QVBoxLayout(calendar_group)
+        calendar_layout.setSpacing(8)
         self.calendar = DetectionCalendar()
         calendar_layout.addWidget(self.calendar)
         detections_layout.addWidget(calendar_group)
@@ -518,6 +564,7 @@ class VIPERS_UI(QMainWindow):
         # Detection list
         detection_list_group = QGroupBox("Detection Events")
         detection_list_layout = QVBoxLayout(detection_list_group)
+        detection_list_layout.setSpacing(8)
         self.detection_list = QListWidget()
         detection_list_layout.addWidget(self.detection_list)
         detections_layout.addWidget(detection_list_group)
@@ -527,18 +574,26 @@ class VIPERS_UI(QMainWindow):
         # Logs tab
         logs_tab = QWidget()
         logs_layout = QVBoxLayout(logs_tab)
+        logs_layout.setContentsMargins(10, 10, 10, 10)
+        logs_layout.setSpacing(10)
         
         # Log viewer
         self.log_viewer = QTextEdit()
         self.log_viewer.setReadOnly(True)
         logs_layout.addWidget(QLabel("System Logs"))
         logs_layout.addWidget(self.log_viewer)
+        # Add Clear Logs button
+        self.clear_logs_button = QPushButton("Clear Logs")
+        self.clear_logs_button.clicked.connect(self.clear_logs)
+        logs_layout.addWidget(self.clear_logs_button)
         
         right_panel.addTab(logs_tab, "Logs")
         
         # Alerts tab
         alerts_tab = QWidget()
         alerts_layout = QVBoxLayout(alerts_tab)
+        alerts_layout.setContentsMargins(10, 10, 10, 10)
+        alerts_layout.setSpacing(10)
         
         # Alert panel
         self.alert_panel = AlertWidget()
@@ -552,10 +607,14 @@ class VIPERS_UI(QMainWindow):
         # Settings tab
         settings_tab = QWidget()
         settings_layout = QVBoxLayout(settings_tab)
+        settings_layout.setContentsMargins(10, 10, 10, 10)
+        settings_layout.setSpacing(14)
         
         # Camera settings
         camera_settings_group = QGroupBox("Camera Settings")
         camera_settings_layout = QGridLayout(camera_settings_group)
+        camera_settings_layout.setHorizontalSpacing(16)
+        camera_settings_layout.setVerticalSpacing(10)
         
         camera_settings_layout.addWidget(QLabel("Camera Source:"), 0, 0)
         self.camera_source = QComboBox()
@@ -578,6 +637,8 @@ class VIPERS_UI(QMainWindow):
         # Detection settings
         detection_settings_group = QGroupBox("Detection Settings")
         detection_settings_layout = QGridLayout(detection_settings_group)
+        detection_settings_layout.setHorizontalSpacing(16)
+        detection_settings_layout.setVerticalSpacing(10)
         
         detection_settings_layout.addWidget(QLabel("Detection Model:"), 0, 0)
         self.model_combo = QComboBox()
@@ -601,6 +662,8 @@ class VIPERS_UI(QMainWindow):
         # Storage settings
         storage_settings_group = QGroupBox("Storage Settings")
         storage_settings_layout = QGridLayout(storage_settings_group)
+        storage_settings_layout.setHorizontalSpacing(16)
+        storage_settings_layout.setVerticalSpacing(10)
         
         storage_settings_layout.addWidget(QLabel("Storage Path:"), 0, 0)
         self.storage_path = QLabel("./recordings")
@@ -669,6 +732,9 @@ class VIPERS_UI(QMainWindow):
         self.log_message("VIPERS Surveillance System initialized")
         self.alert_panel.add_alert("System ready for operation", "info")
         
+        # Ensure tab text is not elided
+        self.right_panel.setStyleSheet(self.right_panel.styleSheet() + " QTabBar::tab { elide-mode: none; }")
+        
     def create_menu_bar(self):
         menubar = self.menuBar()
         
@@ -718,31 +784,12 @@ class VIPERS_UI(QMainWindow):
         toolbar = QToolBar("Main Toolbar")
         toolbar.setIconSize(QSize(24, 24))
         self.addToolBar(toolbar)
-        
-        start_action = QAction("Start Detection", self)
-        start_action.triggered.connect(self.start_detection)
-        toolbar.addAction(start_action)
-        
-        record_action = QAction("Record", self)
-        record_action.triggered.connect(self.toggle_recording)
-        toolbar.addAction(record_action)
-        
-        play_action = QAction("Play", self)
-        play_action.triggered.connect(self.play_video)
-        toolbar.addAction(play_action)
-        
-        stop_action = QAction("Stop", self)
-        stop_action.triggered.connect(self.stop_video)
-        toolbar.addAction(stop_action)
-        
-        toolbar.addSeparator()
-        
+        # Remove duplicate controls: Start Detection, Record, Play, Stop
+        # Only keep screenshot and settings in the toolbar
         screenshot_action = QAction("Screenshot", self)
         screenshot_action.triggered.connect(self.save_current_frame)
         toolbar.addAction(screenshot_action)
-        
         toolbar.addSeparator()
-        
         settings_action = QAction("Settings", self)
         settings_action.triggered.connect(lambda: self.right_panel.setCurrentIndex(3))
         toolbar.addAction(settings_action)
@@ -1161,14 +1208,20 @@ class VIPERS_UI(QMainWindow):
     def seek_video(self, position):
         if not self.playback_mode or not self.cap or not self.cap.isOpened():
             return
-            
-        # Set position
-        self.cap.set(cv2.CAP_PROP_POS_FRAMES, position)
-        
-        # If paused, update the display with the new frame
-        if not self.timer.isActive():
-            self.update_playback()
-            
+
+        # Only start playback if the position is a detection frame
+        if hasattr(self, 'detection_frame_indices') and position in self.detection_frame_indices:
+            # Set position
+            self.cap.set(cv2.CAP_PROP_POS_FRAMES, position)
+            # Start playback
+            if not self.timer.isActive():
+                self.play_video()
+        else:
+            # Set position only, do not start playback
+            self.cap.set(cv2.CAP_PROP_POS_FRAMES, position)
+            if not self.timer.isActive():
+                self.update_playback()
+
 
         
 
@@ -1471,11 +1524,13 @@ class VIPERS_UI(QMainWindow):
         
         # Format message with timestamp and level
         if level == "error":
-            formatted_message = f"[{timestamp}] ERROR: {message}"
+            formatted_message = f"<span style='color:#e74c3c;'>[{timestamp}] ERROR: {message}</span>"
         elif level == "warning":
-            formatted_message = f"[{timestamp}] WARNING: {message}"
+            formatted_message = f"<span style='color:#f39c12;'>[{timestamp}] WARNING: {message}</span>"
+        elif level == "detection":
+            formatted_message = f"<span style='color:#1abc9c;'>[{timestamp}] {message}</span>"
         else:
-            formatted_message = f"[{timestamp}] INFO: {message}"
+            formatted_message = f"<span style='color:#bdc3c7;'>[{timestamp}] INFO: {message}</span>"
             
         # Add to log viewer with clickable functionality
         cursor = self.log_viewer.textCursor()
@@ -1489,7 +1544,7 @@ class VIPERS_UI(QMainWindow):
         self.log_viewer.append(formatted_message)
         
         # If this is a detection-related message, make it clickable
-        if "detection" in message.lower() or "detected" in message.lower():
+        if ("detection" in message.lower() or "detected" in message.lower() or level == "detection"):
             # Store the timestamp and frame info for this log entry
             if hasattr(self, 'log_timestamps') == False:
                 self.log_timestamps = {}
@@ -1506,7 +1561,7 @@ class VIPERS_UI(QMainWindow):
         
         try:
             with open(log_file, 'a') as f:
-                f.write(formatted_message + "\n")
+                f.write(f"[{timestamp}] {message}\n")
         except Exception as e:
             print(f"Error writing to log file: {e}")
             
@@ -1539,17 +1594,22 @@ class VIPERS_UI(QMainWindow):
                     self.playback_radio.setChecked(True)
                     self.mode_changed()
                 
-                # If we have a recording loaded, seek to the frame
+                # If we have a recording loaded, seek to the frame and play
                 if self.cap and self.cap.isOpened():
                     self.seek_video(log_data['frame_index'])
-                    self.play_video()
+                    # Ensure playback starts if this is a detection frame
+                    if hasattr(self, 'detection_frame_indices') and log_data['frame_index'] in self.detection_frame_indices:
+                        if not self.timer.isActive():
+                            self.play_video()
                 else:
                     # Try to load the most recent recording
                     self.load_most_recent_recording()
                     # After loading, seek to the appropriate position
                     if self.cap and self.cap.isOpened():
                         self.seek_video(log_data['frame_index'])
-                        self.play_video()
+                        if hasattr(self, 'detection_frame_indices') and log_data['frame_index'] in self.detection_frame_indices:
+                            if not self.timer.isActive():
+                                self.play_video()
         
         # Call the original mousePressEvent
         super(QTextEdit, self.log_viewer).mousePressEvent(event)
@@ -1622,9 +1682,18 @@ class VIPERS_UI(QMainWindow):
             
             # Set playback mode
             self.playback_mode = True
-            
+
             # Update timer to use playback method
             self.timer.timeout.disconnect()
             self.timer.timeout.connect(self.update_playback)
-            
+
+            # Update detection marks on slider
+            if hasattr(self, 'detection_frame_indices'):
+                self.video_slider.set_detection_points(self.detection_frame_indices)
+
             self.log_message(f"Opened video file: {os.path.basename(file_path)}")
+
+    def clear_logs(self):
+        self.log_viewer.clear()
+        if hasattr(self, 'log_timestamps'):
+            self.log_timestamps.clear()
